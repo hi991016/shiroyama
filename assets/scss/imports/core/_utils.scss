@@ -1,0 +1,47 @@
+/* Utils
+------------------------------------------------------------*/
+
+/* font family */
+.montserrat-fonts {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-optical-sizing: auto;
+}
+
+.dnp-fonts {
+  font-family: "dnp-shuei-gothic-gin-std", sans-serif;
+  font-style: normal;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+/* only device */
+
+.sp-only,
+.is-hidden {
+  display: none !important;
+}
+
+@include maxW(1023px) {
+  .pc-only {
+    display: none !important;
+  }
+
+  .sp-only {
+    display: block !important;
+  }
+}
