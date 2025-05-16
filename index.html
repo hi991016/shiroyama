@@ -89,7 +89,7 @@
     <!-- @@loading -->
 
     <!-- @reservation -->
-    <a href="/admission/tour/" class="c-reservation">
+    <a class="c-reservation" href="/admission/tour/">
         <div class="c-reservation_container">
             <div class="content">
                 <h1>園見学のご案内</h1>
@@ -111,6 +111,16 @@
     </a>
     <!-- @@reservation -->
 
+    <!-- @scrolldown -->
+    <div class="c-scrolldown"><span></span></div>
+    <!-- @scrolldown -->
+
+    <!-- @sidebar -->
+    <div class="c-sidebar">
+        <div class="c-sidebar_container"></div>
+    </div>
+    <!-- @sidebar -->
+
     <!-- @header -->
     <header class="c-header">
         <div class="c-header_container"></div>
@@ -119,13 +129,37 @@
 
     <!-- @main -->
     <main class="homepage">
-        <!-- top// -->
-        <section class="top">
-            <div class="top_container">
-                <h2>have a nice day!!</h2>
+        <!-- firstview// -->
+        <section class="fv">
+            <div class="fv_container">
+                <div class="fv_overlay"></div>
+                <div class="fv_swiper" data-fv-swiper>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <source media="(max-width: 1023px)" data-srcset="/assets/images/home/fv_slide_01_sp.webp">
+                            <img class="lazy" draggable="false" data-src="/assets/images/home/fv_slide_01.webp"
+                                alt="いちばんの今日を、ここで。" width="1300" height="779">
+                            </picture>
+                        </div>
+                        <div class="swiper-slide">
+                            <source media="(max-width: 1023px)" data-srcset="/assets/images/home/fv_slide_02_sp.webp">
+                            <img class="lazy" draggable="false" data-src="/assets/images/home/fv_slide_02.webp"
+                                alt="いちばんの今日を、ここで。" width="1300" height="779">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-        <!-- //top -->
+        <!-- //firstview -->
+
+        <!-- news// -->
+         <div class="news">
+            <div class="news_container" style="height: 200vh;">
+                <div class="c-news"></div>
+            </div>
+         </div>
+        <!-- //news -->
     </main>
     <!-- @@main -->
 
@@ -139,7 +173,7 @@
     <script src="/assets/js/libs.js"></script>
     <script src="/assets/js/main.js"></script>
     <script src="/assets/js/home.js"></script>
-    
+
 </body>
 
 </html>

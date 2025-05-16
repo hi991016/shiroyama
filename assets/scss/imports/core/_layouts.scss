@@ -59,6 +59,13 @@ body {
 //-------------------------------------------------------
 main {
   flex: 1;
+  width: calc(100% - 140px);
+  margin-left: auto;
+
+  @include maxW(1023px) {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
 ::selection {

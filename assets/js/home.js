@@ -13,6 +13,7 @@ const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const initLoading = async () => {
   if (sessionStorage.getItem("opening-displayed") === "true") {
     document.querySelector("[data-loading]").remove();
+    swiperFv.autoplay.start();
   } else {
     // # Block scroll events
     window.addEventListener("wheel", preventScroll, { passive: false });
@@ -42,10 +43,28 @@ const initLoading = async () => {
     window.removeEventListener("scroll", preventScroll);
     window.removeEventListener("keydown", preventScroll);
 
+    // # play swiper fv
+    swiperFv.autoplay.start();
+
     // # set sessionStorage
     sessionStorage.setItem("opening-displayed", !0);
   }
 };
+
+// ===== fv =====
+const swiperFv = new Swiper("[data-fv-swiper]", {
+  effect: "fade",
+  speed: 2000,
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: false,
+  },
+  on: {
+    init: function () {
+      this.autoplay.stop();
+    },
+  },
+});
 
 // ### ===== DOMCONTENTLOADED ===== ###
 window.addEventListener("DOMContentLoaded", homepage);
