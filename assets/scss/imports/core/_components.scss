@@ -63,7 +63,7 @@
     color: $white-cl;
   }
 
-  h1 {
+  h2 {
     font-size: 1.9rem;
     font-weight: 600;
     letter-spacing: -0.38px;
@@ -98,7 +98,7 @@
       }
     }
 
-    h1 {
+    h2 {
       font-size: 1.5rem;
       letter-spacing: -0.3px;
       line-height: 1.53;
@@ -128,7 +128,7 @@
 
   span {
     display: block;
-    width: 2px;
+    width: 2.5px;
     height: 200px;
 
     &:before {
@@ -178,7 +178,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 20px;
+    z-index: 20;
 
     padding: 40px 0 43px 0;
     width: 140px;
@@ -188,6 +188,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 
     &:after {
       content: "";
@@ -197,6 +198,28 @@
       width: 1px;
       height: 100%;
       background-color: rgba($color: $black-cl, $alpha: 0.1);
+    }
+  }
+
+  &_logo {
+    margin: 0 auto;
+  }
+
+  &_menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 23px 17px;
+
+    li {
+      a {
+        p {
+          margin-top: 7px;
+          font-size: 1.5rem;
+          font-weight: 500;
+          letter-spacing: -0.3px;
+          writing-mode: vertical-rl;
+        }
+      }
     }
   }
 }
