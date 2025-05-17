@@ -220,7 +220,7 @@
     <!-- @sidebar -->
 
     <!-- @header -->
-    <header class="c-header">
+    <header class="c-header" data-header>
         <div class="c-header_container">
             <a href="/" class="c-header_logo sp-only">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="181.318"
@@ -301,12 +301,18 @@
                     </svg>
                 </div>
             </nav>
-            <button class="c-header_hamburger" data-header-toggler>
-                <span></span>
-                <span></span>
-                <p class="montserrat-fonts font-medium">MENU</p>
-            </button>
+            <div class="c-header_hamburger" data-header-toggler>
+                <button>
+                    <span></span>
+                    <span></span>
+                    <p class="montserrat-fonts font-medium">MENU</p>
+                </button>
+            </div>
         </div>
+        <div class="c-header_menu" data-header-menu>
+            <div class="wrapper"></div>
+        </div>
+        <div class="c-header_overlay" data-header-overlay></div>
     </header>
     <!-- @@header -->
 
@@ -349,7 +355,7 @@
 
         <!-- news// -->
         <div class="news">
-            <div class="news_container" style="height: 200vh;">
+            <div class="news_container" data-offset-top style="height: 200vh;">
                 <div class="c-news"></div>
             </div>
         </div>

@@ -4,36 +4,34 @@
 .c-header {
   --color: #fff;
 
-  &.--white {
+  &.--black {
     --color: #000;
+
+    [data-header-toggler] {
+      position: fixed;
+    }
   }
 
   &_container {
-    position: absolute;
-    top: 60px;
-    z-index: 10;
-
-    width: 100%;
-    padding: 0 50px;
-
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
-    gap: 55px;
+    position: relative;
+    z-index: 20;
     color: var(--color);
   }
 
   &_list {
+    position: absolute;
+    top: 60px;
+    right: 170px;
     display: flex;
     align-items: flex-start;
-    flex-direction: column;
+    flex-direction: row-reverse;
     gap: 22px;
-    writing-mode: vertical-rl;
 
     a {
       font-size: 1.7rem;
       font-weight: 600;
       letter-spacing: -0.34px;
+      writing-mode: vertical-lr;
       position: relative;
 
       svg {
@@ -54,36 +52,96 @@
   }
 
   &_hamburger {
-    background-color: rgba(0, 0, 0, 0);
-    border: 0;
-    padding: 0;
-    width: 60px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    cursor: pointer;
-    transition: opacity 0.3s ease-in-out;
+    position: absolute;
+    top: 60px;
+    right: 50px;
 
-    &:hover {
-      opacity: 0.8;
+    button {
+      background-color: rgba(0, 0, 0, 0);
+      border: 0;
+      padding: 0;
+      width: 60px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      cursor: pointer;
+      transition: opacity 0.3s ease-in-out;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        border-radius: 50%;
+        background-color: var(--color);
+        margin: 5px 0;
+        transition: 0.3s ease-in;
+      }
+
+      p {
+        font-size: 1.2rem;
+        margin-top: 8px;
+        text-align: center;
+      }
+    }
+  }
+
+  &_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    background: $black-cl;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    z-index: 100;
+    pointer-events: none;
+
+    &.--visible {
+      opacity: 0.85;
+      visibility: visible;
+      pointer-events: auto;
+    }
+  }
+
+  &_menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 200;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+
+    &.--show {
+      .wrapper {
+        visibility: visible;
+        transform: translate(0);
+        pointer-events: auto;
+      }
     }
 
-    span {
-      display: block;
-      width: 100%;
-      height: 2px;
-      border-radius: 50%;
-      background-color: var(--color);
-      margin: 5px 0;
-      transition: 0.3s ease-in;
-    }
-
-    p {
-      font-size: 1.2rem;
-      margin-top: 8px;
-      text-align: center;
+    .wrapper {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #f7f5ef;
+      color: #000;
+      width: 500px;
+      height: 100%;
+      pointer-events: none;
+      visibility: hidden;
+      transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1),
+        visibility 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+      transform: translate(100%);
     }
   }
 
@@ -91,27 +149,33 @@
     --color: #000;
 
     &_container {
-      position: relative;
-      top: auto;
       width: 100%;
       height: 82px;
       padding-right: 25px;
       padding-left: 20px;
+
+      display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
     }
 
     &_hamburger {
-      width: 40px;
-      
-      span {
-        margin: 3px 0;
-      }
+      position: initial;
+      top: 30px;
+      right: 25px;
 
-      p {
-        font-size: 1rem;
-        margin-top: 4px;
+      button {
+        width: 40px;
+
+        span {
+          margin: 3px 0;
+        }
+
+        p {
+          font-size: 1rem;
+          margin-top: 4px;
+        }
       }
     }
   }
