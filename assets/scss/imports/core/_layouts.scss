@@ -59,6 +59,10 @@ body {
 //-------------------------------------------------------
 main {
   flex: 1;
+}
+
+main,
+footer {
   width: calc(100% - 140px);
   margin-left: auto;
 

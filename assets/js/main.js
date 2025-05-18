@@ -123,5 +123,21 @@ document.addEventListener("click", function (e) {
   return false;
 });
 
+// ===== hide reservation =====
+const [reservation, footer] = [
+  document.querySelector("[data-reservation]"),
+  document.querySelector("[data-footer]"),
+];
+"pageshow scroll".split(" ").forEach((evt) => {
+  window.addEventListener(evt, () => {
+    const footerInView = footer.getBoundingClientRect().top;
+    if (window.scrollY >= footerInView + window.innerHeight) {
+      reservation.classList.add("--hidden");
+    } else {
+      reservation.classList.remove("--hidden");
+    }
+  });
+});
+
 // ### ===== DOMCONTENTLOADED ===== ###
 window.addEventListener("DOMContentLoaded", init);

@@ -51,6 +51,12 @@
   height: 90px;
   border-radius: 5px;
   background-color: rgba($color: $yellow-cl, $alpha: 0.9);
+  transition: opacity 0.3s ease-in-out;
+
+  &.--hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
 
   &_container {
     width: 100%;

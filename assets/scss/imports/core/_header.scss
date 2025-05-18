@@ -217,9 +217,9 @@
 
   &_center {
     flex: 1;
-    padding: 125px 50px 50px 105px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 50px;
 
     .left {
@@ -247,7 +247,7 @@
     }
 
     .right {
-      margin-top: 3px;
+      margin-top: -65px;
 
       a {
         margin-top: 12px;
@@ -309,11 +309,6 @@
     }
 
     &_center {
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
       .left {
         a {
           margin-top: 10px;
@@ -327,8 +322,6 @@
       }
 
       .right {
-        margin-top: -65px;
-
         a {
           margin-top: 8px;
           font-size: 1.4rem;
@@ -340,6 +333,11 @@
       .right {
         a {
           gap: 10px;
+
+          svg {
+            width: 14.38px;
+            height: auto;
+          }
         }
       }
     }
