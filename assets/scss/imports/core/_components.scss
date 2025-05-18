@@ -6,15 +6,15 @@
   position: fixed;
   width: 100%;
   height: var(--app-height);
-  background-color: $main-bg-cl;
+  background: $main-bg-cl;
   overflow: hidden;
   z-index: 99999999;
   pointer-events: none;
-  transition: all 1s ease-in;
+  transition: opacity 1s ease-in, background 1s ease-in, z-index 1s ease-in;
 
   &.--done {
     z-index: -1;
-    background-color: unset;
+    background: unset;
     opacity: 0;
   }
 
