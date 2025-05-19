@@ -2,10 +2,16 @@
 ------------------------------------------------------------*/
 
 .u-pad {
-  padding: 0 6.944vw;
+  padding: var(--padd);
+}
 
-  @include maxW(1023px) {
-    padding: 0 5.314vw;
+.u-wrapper {
+  padding: 0 var(--padd);
+}
+
+@include maxW(1023px) {
+  :root {
+    --padd: 5.314vw;
   }
 }
 
@@ -35,6 +41,16 @@
 
 .font-bold {
   font-weight: 700;
+}
+
+/* lazy load */
+.lazy {
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+  &.loaded {
+    opacity: 1;
+  }
 }
 
 /* only device */

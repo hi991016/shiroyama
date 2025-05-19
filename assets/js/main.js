@@ -130,8 +130,8 @@ const [reservation, footer] = [
 ];
 "pageshow scroll".split(" ").forEach((evt) => {
   window.addEventListener(evt, () => {
-    const footerInView = footer.getBoundingClientRect().top;
-    if (window.scrollY >= footerInView + window.innerHeight) {
+    const footerInView = footer.offsetTop;
+    if (window.scrollY + window.innerHeight >= footerInView) {
       reservation.classList.add("--hidden");
     } else {
       reservation.classList.remove("--hidden");
