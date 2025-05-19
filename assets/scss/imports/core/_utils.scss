@@ -2,7 +2,11 @@
 ------------------------------------------------------------*/
 
 .u-pad {
-  padding: 0 7.692vw;
+  padding: 0 6.944vw;
+
+  @include maxW(1023px) {
+    padding: 0 5.314vw;
+  }
 }
 
 /* font family */
