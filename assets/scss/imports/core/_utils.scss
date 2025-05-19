@@ -1,20 +1,6 @@
 /* Utils
 ------------------------------------------------------------*/
 
-.u-pad {
-  padding: var(--padd);
-}
-
-.u-wrapper {
-  padding: 0 var(--padd);
-}
-
-@include maxW(1023px) {
-  :root {
-    --padd: 5.314vw;
-  }
-}
-
 /* font family */
 .montserrat-fonts {
   font-family: "Montserrat", sans-serif;

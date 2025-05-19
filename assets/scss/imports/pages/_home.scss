@@ -67,6 +67,66 @@
     }
   }
 
+  // ===== news =====
+  .news {
+    &_container {
+      margin-top: 145px;
+    }
+
+    &_inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    &_left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &_link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.6rem;
+      font-weight: 500;
+      letter-spacing: -0.32px;
+      line-height: 1.5;
+    }
+
+    &_right {
+      grid-column: 2/5;
+    }
+
+    @include maxW(1023px) {
+      &_container {
+        margin-top: 75px;
+      }
+
+      &_inner {
+        display: block;
+      }
+
+      &_left {
+        flex-direction: row;
+      }
+
+      &_link {
+        gap: 9px;
+          font-size: 1.4rem;
+          letter-spacing: -0.28px;
+        svg {
+          width: 15px;
+          height: auto;
+        }
+      }
+
+      &_right {
+        margin-top: 35px;
+      }
+    }
+  }
+
   // ===== philosophy =====
   .phy {
     &_container {
