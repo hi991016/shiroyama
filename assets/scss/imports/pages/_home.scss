@@ -72,6 +72,92 @@
     &_container {
       margin-top: 195px;
     }
+
+    &_list {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    &_items {
+      figure {
+        display: block;
+        position: relative;
+        z-index: 1;
+        height: auto;
+        padding-bottom: 100%;
+        background-color: $dominant-cl;
+        aspect-ratio: 1/1;
+        border-radius: 5px;
+        overflow: hidden;
+
+        &:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1;
+          width: 100%;
+          height: 100%;
+          background-color: rgba($color: #000000, $alpha: 0.03);
+        }
+
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transform: translate(-50%, -50%) scale(1);
+          transition: 0.4s;
+        }
+
+        &:hover {
+          img {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.08);
+          }
+        }
+      }
+
+      p {
+        margin-top: 15px;
+        font-size: 1.8rem;
+        font-weight: 600;
+        letter-spacing: -0.36px;
+        line-height: 1.5;
+      }
+    }
+
+    &_bnr {
+      margin-top: 67px;
+    }
+
+    @include maxW(1023px) {
+      &_container {
+        margin-top: 116px;
+      }
+
+      &_list {
+        margin-top: 45px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px 14px;
+      }
+
+      &_items {
+        p {
+          margin-top: 12px;
+          font-size: 1.4rem;
+          letter-spacing: -0.28px;
+        }
+      }
+
+      &_bnr {
+        margin-top: 58px;
+      }
+    }
   }
 
   // ===== nursary ======
