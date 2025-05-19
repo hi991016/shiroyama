@@ -66,5 +66,46 @@ const swiperFv = new Swiper("[data-fv-swiper]", {
   },
 });
 
+// ===== philosophy =====
+const swiperPhy = new Swiper("[data-phy-swiper]", {
+  effect: "fade",
+  speed: 2000,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    0: {
+      allowTouchMove: true,
+      draggable: true,
+    },
+    1024: {
+      draggable: false,
+      allowTouchMove: false,
+    },
+  },
+});
+
+// ===== feature =====
+const swiperFeature = new Swiper("[data-feature-swiper]", {
+  breakpoints: {
+    0: {
+      slidesPerView: 1.167,
+      spaceBetween: 14,
+      allowTouchMove: true,
+      draggable: true,
+    },
+    1024: {
+      slidesPerView: 1,
+      draggable: false,
+      allowTouchMove: false,
+    },
+  },
+});
+
 // ### ===== DOMCONTENTLOADED ===== ###
 window.addEventListener("DOMContentLoaded", homepage);
