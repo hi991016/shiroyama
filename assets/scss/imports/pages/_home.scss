@@ -489,6 +489,16 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
+
+      [data-fadein]:nth-of-type(2) {
+        transition-delay: 0.5s;
+      }
+      [data-fadein]:nth-of-type(3) {
+        transition-delay: 0.7s;
+      }
+      [data-fadein]:nth-of-type(4) {
+        transition-delay: 0.9s;
+      }
     }
 
     &_items {

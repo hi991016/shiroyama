@@ -43,6 +43,17 @@
   font-weight: 700;
 }
 
+/* fade content */
+[data-fadein] {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  transition-delay: 0.3s;
+
+  &.--inview {
+    opacity: 1;
+  }
+}
+
 /* lazy load */
 .lazy {
   opacity: 0;

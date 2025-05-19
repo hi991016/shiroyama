@@ -139,5 +139,21 @@ const [reservation, footer] = [
   });
 });
 
+// ===== scroll fade content =====
+const fadeInArray = document.querySelectorAll("[data-fadein]");
+const fadeIn = () => {
+  for (let i = 0; i < fadeInArray.length; i++) {
+    let elem = fadeInArray[i];
+    let distInView =
+      elem.getBoundingClientRect().top - window.innerHeight + 100;
+    if (distInView < 0) {
+      elem.classList.add("--inview");
+    }
+  }
+};
+"pageshow scroll".split(" ").forEach((evt) => {
+  window.addEventListener(evt, fadeIn);
+});
+
 // ### ===== DOMCONTENTLOADED ===== ###
 window.addEventListener("DOMContentLoaded", init);
