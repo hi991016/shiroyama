@@ -245,6 +245,18 @@
 
 // ===== heading =====
 .c-heading {
+  &.--big {
+    h2 {
+      font-size: 3.2rem;
+      letter-spacing: -0.64px;
+    }
+
+    p {
+      font-size: 1.8rem;
+      letter-spacing: 1.8px;
+    }
+  }
+
   h2 {
     font-size: 2.8rem;
     font-weight: 600;
@@ -262,6 +274,18 @@
   }
 
   @include maxW(1023px) {
+    &.--big {
+      h2 {
+        font-size: 2.2rem;
+        letter-spacing: -0.44px;
+      }
+
+      p {
+        font-size: 1.4rem;
+        letter-spacing: 1.4px;
+      }
+    }
+
     h2 {
       font-size: 2rem;
       letter-spacing: -0.4px;
@@ -383,6 +407,11 @@
 
 // ===== bnr =====
 .c-bnr {
+  &_container {
+    margin-top: 100px;
+    padding: 0 var(--padd);
+  }
+
   &_list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -461,6 +490,10 @@
   }
 
   @include maxW(1023px) {
+    &_container {
+      margin-top: 80px;
+    }
+    
     &_list {
       grid-template-columns: repeat(1, 1fr);
     }
@@ -507,13 +540,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 60px;
+    gap: 80px;
   }
 
   &_items {
     display: flex;
     align-items: center;
-    gap: 60px;
+    gap: 80px;
 
     p.date {
       font-family: $en-fonts;
@@ -612,5 +645,22 @@
     &_group {
       gap: 23px;
     }
+  }
+}
+
+// ==== line =====
+.c-line {
+  margin-top: 100px;
+
+  span {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: $black-cl;
+    opacity: 0.1;
+  }
+
+  @include maxW(1023px) {
+    margin-top: 80px;
   }
 }

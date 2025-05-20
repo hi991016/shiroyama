@@ -1,3 +1,185 @@
 /* -------------------------------------------------------------------------- */
 /*                                  news page                                 */
 /* -------------------------------------------------------------------------- */
+
+.news {
+  &_container {
+    margin-top: 333px;
+    position: relative;
+    width: 100%;
+  }
+
+  &_heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+  }
+
+  &_category {
+    display: flex;
+    gap: 24px;
+    font-family: $en-fonts;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.96px;
+    text-transform: uppercase;
+
+    a {
+      opacity: 0.3;
+
+      &.--active {
+        opacity: 1;
+      }
+    }
+  }
+
+  &_group {
+    .nav {
+      display: flex;
+      gap: 20px;
+    }
+  }
+
+  &_list {
+    margin-top: 120px;
+    padding-bottom: 120px;
+    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+  }
+
+  &_controls {
+    margin-top: 45px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 20px;
+  }
+
+  &_pager {
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: -0.32px;
+    line-height: 1.5;
+
+    &.older {
+      margin-left: auto;
+    }
+  }
+
+  &_center {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    a {
+      font-family: $en-fonts;
+      font-size: 1.8rem;
+      font-weight: 400;
+      letter-spacing: 1.08px;
+      line-height: 1.5;
+      position: relative;
+
+      &.--active:after {
+        opacity: 1;
+      }
+
+      &.--back {
+        font-family: $main-fonts;
+        font-size: 1.6rem;
+        font-weight: 500;
+        letter-spacing: -0.32px;
+        line-height: 1.5;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 15px;
+        height: 2px;
+        background-color: $black-cl;
+        opacity: 0;
+      }
+    }
+  }
+
+  @include maxW(1023px) {
+    &_container {
+      margin-top: 95px;
+    }
+
+    &_category {
+      display: block;
+      position: absolute;
+      right: 0;
+      font-size: 1.3rem;
+      letter-spacing: 0.78px;
+
+      .btn-category {
+        display: flex !important;
+        align-items: center;
+        gap: 12px;
+
+        &.--active svg {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    &_group {
+      width: max-content;
+      position: absolute;
+      top: 20px;
+      right: 0;
+      z-index: 21;
+      background-color: $gray-cl;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+
+      .nav {
+        padding: 15px;
+        display: block;
+
+        a {
+          margin-top: 15px;
+
+          &:first-child {
+            margin-top: initial;
+          }
+        }
+      }
+    }
+
+    &_list {
+      margin-top: 60px;
+      padding-bottom: 60px;
+    }
+
+    &_controls {
+      margin-top: 25px;
+    }
+
+    &_pager {
+      font-size: 1.2rem;
+      letter-spacing: -0.24px;
+    }
+
+    &_center {
+      gap: 10px;
+
+      a {
+        font-size: 1.4rem;
+        letter-spacing: 0.84px;
+
+        &.--back {
+          font-size: 1.2rem;
+          letter-spacing: -0.24px;
+        }
+      }
+    }
+  }
+}
