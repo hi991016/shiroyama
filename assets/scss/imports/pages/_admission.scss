@@ -3,6 +3,427 @@
 /* -------------------------------------------------------------------------- */
 
 .admissionpage {
+  // ===== admission =====
+  .ad {
+    &_container {
+      margin-top: 115px;
+    }
+
+    &_intro {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      h2 {
+        font-size: 2.8rem;
+        font-weight: 600;
+        letter-spacing: -0.56px;
+        line-height: 1.55;
+      }
+
+      &_content {
+        p {
+          font-size: 1.6rem;
+          font-weight: 500;
+          letter-spacing: -0.8px;
+          line-height: 2;
+          text-align: justify;
+          font-feature-settings: "palt" 1;
+        }
+      }
+
+      &_btn {
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        a {
+          position: relative;
+          width: 100%;
+          height: 80px;
+          background-color: transparent;
+          border: 2px solid $black-cl;
+          border-radius: 5px;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          transition: all 0.2s ease-in-out;
+
+          font-size: 1.7rem;
+          font-weight: 600;
+          letter-spacing: -0.34px;
+
+          svg {
+            position: absolute;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%);
+
+            line {
+              transition: all 0.2s ease-in-out;
+            }
+          }
+
+          &:hover {
+            background-color: $yellow-cl;
+            border-color: $yellow-cl;
+            color: $white-cl;
+            opacity: 1;
+
+            line {
+              stroke: $white-cl;
+            }
+          }
+        }
+      }
+
+      @include maxW(1023px) {
+        display: block;
+
+        h2 {
+          font-size: 2rem;
+          letter-spacing: -0.4px;
+          line-height: 1.75;
+        }
+
+        &_content {
+          margin-top: 40px;
+
+          p {
+            font-size: 1.3rem;
+            letter-spacing: -0.26px;
+            line-height: 1.81;
+          }
+        }
+
+        &_btn {
+          margin-top: 67px;
+          gap: 15px;
+
+          a {
+            height: 64px;
+            font-size: 1.5rem;
+            letter-spacing: -0.3px;
+
+            svg {
+              right: 25px;
+              width: 20px;
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+
+    &_process {
+      margin-top: 145px;
+
+      &_title {
+        p {
+          font-size: 2.4rem;
+          font-weight: 600;
+          letter-spacing: -0.48px;
+          line-height: 1.88;
+          padding-left: 35px;
+          position: relative;
+
+          &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 9px;
+            height: 9px;
+            border: 7px solid $yellow-cl;
+            border-radius: 50%;
+            background: transparent;
+          }
+        }
+      }
+
+      @include maxW(1023px) {
+        margin-top: 70px;
+
+        &_title {
+          p {
+            font-size: 1.8rem;
+            letter-spacing: -0.36px;
+            line-height: 1.83;
+            padding-left: 30px;
+
+            &:after {
+              width: 8px;
+              height: 8px;
+              border: 5px solid $yellow-cl;
+            }
+          }
+        }
+      }
+
+      &_desc {
+        margin-top: 55px;
+        font-size: 1.6rem;
+        font-weight: 500;
+        letter-spacing: -0.8px;
+        line-height: 2;
+
+        @include maxW(1023px) {
+          margin-top: 40px;
+          font-size: 1.3rem;
+          letter-spacing: -0.26px;
+          line-height: 1.81;
+        }
+      }
+
+      &_list {
+        margin-top: 68px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 30px;
+
+        @include maxW(1023px) {
+          margin-top: 50px;
+          grid-template-columns: repeat(1, 1fr);
+          gap: 38px;
+        }
+      }
+
+      &_items {
+        position: relative;
+        padding: 35px 25px 60px;
+        background-color: rgba($color: $yellow-cl, $alpha: 0.25);
+        border-radius: 5px;
+
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 42px;
+
+        &:last-child {
+          position: unset;
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+          display: inline-block;
+          width: 8px;
+          height: 8px;
+          border-bottom: 1px solid #000;
+          border-left: 1px solid #000;
+          right: -19px;
+          top: 50%;
+          transform: translateY(-50%) rotate(-135deg);
+        }
+
+        @include maxW(1023px) {
+          padding: 23px 30px 26px;
+          gap: 20px;
+          align-items: flex-start;
+
+          &:after {
+            top: auto;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-45deg);
+          }
+        }
+      }
+
+      &_type {
+        text-align: center;
+
+        h5 {
+          font-family: $en-fonts;
+          font-size: 1.8rem;
+          font-weight: 500;
+          color: $yellow-cl;
+        }
+
+        p {
+          margin-top: 4px;
+          font-size: 1.8rem;
+          letter-spacing: -0.36px;
+          line-height: 1.56;
+        }
+
+        @include maxW(1023px) {
+          display: flex;
+          align-items: center;
+          gap: 17px;
+          text-align: initial;
+
+          h5 {
+            font-size: 1.6rem;
+          }
+
+          p {
+            margin-top: initial;
+            font-size: 1.7rem;
+            letter-spacing: -0.34px;
+          }
+        }
+      }
+
+      &_content {
+        font-size: 1.4rem;
+        font-weight: 500;
+        letter-spacing: -0.7px;
+        line-height: 1.56;
+        text-align: justify;
+        font-feature-settings: "palt" 1;
+
+        @include maxW(1023px) {
+          font-size: 1.2rem;
+          letter-spacing: -0.6px;
+        }
+      }
+
+      &_btn {
+        a {
+          margin-top: 70px;
+          position: relative;
+          width: 100%;
+          height: 80px;
+          background-color: transparent;
+          border: 2px solid $black-cl;
+          border-radius: 5px;
+
+          font-size: 1.7rem;
+          font-weight: 600;
+          letter-spacing: -0.34px;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          transition: all 0.2s ease-in-out;
+
+          svg {
+            position: absolute;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%);
+
+            line {
+              transition: all 0.2s ease-in-out;
+            }
+          }
+
+          &:hover {
+            background-color: $yellow-cl;
+            border-color: $yellow-cl;
+            color: $white-cl;
+            opacity: 1;
+
+            svg {
+              line {
+                stroke: $white-cl;
+              }
+            }
+          }
+        }
+
+        @include maxW(1023px) {
+          a {
+            margin-top: 45px;
+            height: 64px;
+            font-size: 1.5rem;
+            letter-spacing: -0.3px;
+
+            svg {
+              width: 20px;
+              height: auto;
+              right: 20px;
+            }
+          }
+        }
+      }
+    }
+
+    &_recruit {
+      margin-top: 150px;
+
+      &_wrapper {
+        background-color: #f6f4ec;
+        padding: var(--padd);
+      }
+
+      &_desc {
+        margin-top: 55px;
+        font-size: 1.6rem;
+        font-weight: 500;
+        letter-spacing: -0.32px;
+        line-height: 1.94;
+      }
+
+      &_btn {
+        margin-top: 65px;
+        position: relative;
+        width: 100%;
+        height: 90px;
+        background-color: $yellow-cl;
+        border-radius: 5px;
+
+        font-size: 1.8rem;
+        font-weight: 600;
+        letter-spacing: -0.34px;
+        color: $white-cl;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        transition: all 0.2s ease-in-out;
+
+        svg {
+          position: absolute;
+          top: 50%;
+          right: 30px;
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    @include maxW(1023px) {
+      &_container {
+        margin-top: 75px;
+      }
+
+      &_recruit {
+        margin-top: 80px;
+
+        &_wrapper {
+          padding-top: 55px;
+          padding-bottom: 60px;
+        }
+
+        &_desc {
+          margin-top: 40px;
+          font-size: 1.3rem;
+          letter-spacing: -0.26px;
+          line-height: 1.81;
+        }
+
+        &_btn {
+          margin-top: 52px;
+          height: 64px;
+          font-size: 1.5rem;
+          letter-spacing: -0.3px;
+
+          svg {
+            width: 20px;
+            height: auto;
+            right: 20px;
+          }
+        }
+      }
+    }
+  }
+
   // ===== faq =====
   .faq {
     &_container {
@@ -71,14 +492,18 @@
         border-top: 1px solid rgba($color: #000000, $alpha: 0.1);
       }
 
+      &_btn,
+      &_panel {
+        display: flex;
+        gap: 30px;
+      }
+
       &_btn {
         width: 100%;
-        display: grid;
-        grid-template-columns: auto auto;
         align-items: center;
-        gap: 30px;
         padding: 35px 0;
         cursor: pointer;
+        position: relative;
 
         &.--active {
           .faq_accordion_plus {
@@ -88,10 +513,7 @@
       }
 
       &_panel {
-        display: grid;
-        grid-template-columns: auto auto;
         align-items: flex-start;
-        gap: 30px;
         max-height: 0;
         overflow: hidden;
         -webkit-transition: all 0.5s ease-in-out;
@@ -157,13 +579,18 @@
           margin-top: 40px;
         }
 
-        &_btn {
+        &_btn,
+        &_panel {
+          display: grid;
+          grid-template-columns: auto auto;
           gap: 15px;
+        }
+
+        &_btn {
           padding: 20px 0;
         }
 
         &_panel {
-          gap: 15px;
           align-items: center;
         }
 
