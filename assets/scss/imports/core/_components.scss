@@ -300,6 +300,135 @@
   }
 }
 
+// ===== button =====
+.c-btn {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  background-color: transparent;
+  border: 2px solid $black-cl;
+  border-radius: 5px;
+
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: -0.34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.2s ease-in-out;
+
+  svg {
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+
+    rect,
+    path,
+    line,
+    g,
+    rect {
+      transition: all 0.2s ease-in-out;
+    }
+  }
+
+  svg.mail,
+  svg.phone {
+    right: 35px;
+  }
+
+  &:hover {
+    background-color: $yellow-cl;
+    border-color: $yellow-cl;
+    color: $white-cl;
+    opacity: 1;
+
+    svg.arrow {
+      line {
+        stroke: $white-cl;
+      }
+    }
+
+    svg.phone {
+      path {
+        fill: $white-cl;
+      }
+    }
+
+    svg.mail {
+      rect {
+        fill: $white-cl;
+      }
+      path {
+        stroke: $yellow-cl;
+        fill: $yellow-cl;
+      }
+    }
+  }
+
+  @include maxW(1023px) {
+    height: 64px;
+    font-size: 1.5rem;
+    letter-spacing: -0.3px;
+
+    svg {
+      right: 25px !important;
+      width: 20px;
+      height: auto;
+    }
+
+    svg.phone {
+      width: 18px;
+    }
+
+    svg.mail {
+      width: 23.31px;
+    }
+  }
+}
+
+// ===== text circle =====
+.c-textcircle {
+  p {
+    font-size: 2.4rem;
+    font-weight: 600;
+    letter-spacing: -0.48px;
+    line-height: 1.88;
+    padding-left: 35px;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 9px;
+      height: 9px;
+      border: 7px solid $yellow-cl;
+      border-radius: 50%;
+      background: transparent;
+    }
+  }
+
+  @include maxW(1023px) {
+    p {
+      font-size: 1.8rem;
+      letter-spacing: -0.36px;
+      line-height: 1.83;
+      padding-left: 30px;
+
+      &:after {
+        width: 8px;
+        height: 8px;
+        border: 5px solid $yellow-cl;
+      }
+    }
+  }
+}
+
 // ===== contact =====
 .c-contact {
   &_container {
@@ -319,60 +448,6 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-
-    a {
-      position: relative;
-      width: 100%;
-      height: 80px;
-      background-color: transparent;
-      border: 2px solid $black-cl;
-      border-radius: 5px;
-
-      font-size: 1.7rem;
-      font-weight: 600;
-      letter-spacing: -0.34px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      transition: all 0.2s ease-in-out;
-
-      svg {
-        position: absolute;
-        top: 50%;
-        right: 35px;
-        transform: translateY(-50%);
-
-        rect,
-        path {
-          transition: all 0.2s ease-in-out;
-        }
-      }
-
-      &:hover {
-        background-color: $yellow-cl;
-        border-color: $yellow-cl;
-        color: $white-cl;
-        opacity: 1;
-
-        svg.phone {
-          path {
-            fill: $white-cl;
-          }
-        }
-
-        svg.mail {
-          rect {
-            fill: $white-cl;
-          }
-          path {
-            stroke: $yellow-cl;
-            fill: $yellow-cl;
-          }
-        }
-      }
-    }
   }
 
   @include maxW(1023px) {
@@ -391,16 +466,6 @@
     &_group {
       margin-top: 45px;
       grid-template-columns: repeat(1, 1fr);
-
-      a {
-        height: 64px;
-        font-size: 1.5rem;
-        letter-spacing: -0.3px;
-
-        svg {
-          right: 17px;
-        }
-      }
     }
   }
 }
@@ -804,46 +869,7 @@
 
     a {
       margin-top: 55px;
-      position: relative;
-      width: 100%;
-      height: 80px;
-      background-color: transparent;
-      border: 2px solid $black-cl;
-      border-radius: 5px;
 
-      font-size: 1.7rem;
-      font-weight: 600;
-      letter-spacing: -0.34px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      transition: all 0.2s ease-in-out;
-
-      svg {
-        position: absolute;
-        top: 50%;
-        right: 30px;
-        transform: translateY(-50%);
-
-        line {
-          transition: all 0.2s ease-in-out;
-        }
-      }
-
-      &:hover {
-        background-color: $yellow-cl;
-        border-color: $yellow-cl;
-        color: $white-cl;
-        opacity: 1;
-
-        svg {
-          line {
-            stroke: $white-cl;
-          }
-        }
-      }
     }
 
     @include maxW(1023px) {
@@ -868,15 +894,6 @@
 
       a {
         margin-top: 30px;
-        height: 64px;
-        font-size: 1.5rem;
-        letter-spacing: -0.3px;
-
-        svg {
-          width: 20px;
-          height: auto;
-          right: 20px;
-        }
       }
 
       .is-pad-sp {
