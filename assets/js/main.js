@@ -19,6 +19,13 @@ const appHeight = () => {
     "--app-height",
     `${document.documentElement.clientHeight}px`
   );
+  const windowHeight = Math.max(
+    document.documentElement.clientHeight,
+    window.innerHeight || 0
+  );
+  if (window.innerWidth < 1024) {
+    document.querySelector("[data-header-menu]").style.height = windowHeight + "px";
+  }
 };
 window.addEventListener("resize", appHeight);
 
