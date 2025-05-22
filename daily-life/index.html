@@ -51,7 +51,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
-    <title>記事タイトルが入ります記事タイトルが入ります | News | Shiroyama</title>
+    <title>Daily Life | Shiroyama</title>
 </head>
 
 <body class="fadeout">
@@ -188,7 +188,7 @@
     <!-- @sidebar -->
 
     <!-- @header -->
-    <header class="c-header --black" data-header data-header-black>
+    <header class="c-header" data-header>
         <div class="c-header_container">
             <div class="leaf" style="display: none;">
                 <svg>
@@ -438,57 +438,389 @@
     <!-- @@header -->
 
     <!-- @main -->
-    <main class="newspage">
-        <!-- details// -->
-        <section class="news detail" data-offset-top>
-            <div class="news_container detail_container u-wrapper">
-                <div class="detail_inner u-wrapper">
-                    <div class="detail_heading">
-                        <h2 class="title">
-                            記事タイトルが入ります記事タイトルが入ります <br />
-                            記事タイトルが入ります記事タイトルが入ります
-                        </h2>
-                        <div class="group">
-                            <p class="date">2025.09.01</p>
-                            <a href="#" class="category --info">INFO</a>
-                        </div>
-                    </div>
+    <main class="dailypage">
+        <!-- thumbnail// -->
+        <section class="c-thumbnail">
+            <picture>
+                <source media="(max-width: 1023px)" data-srcset="/assets/images/daily/daily_thumb_sp.webp">
+                <img class="lazy" draggable="false" data-src="/assets/images/daily/daily_thumb.webp" alt="園の生活"
+                    width="1300" height="550">
+            </picture>
+            <div class="c-thumbnail_heading">
+                <h2>園の生活</h2>
+                <p>DAILY LIFE</p>
+            </div>
+        </section>
+        <!-- //thumbnail -->
 
-                    <div class="detail_entry">
-                        <p><img src="/assets/images/" alt="" width="900" height="601" draggable="false"></p>
-                        <p>
-                            テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
-                        </p>
-                        <h3>見出しが入ります見出しが入ります</h3>
-                        <p><img src="/assets/images/" alt="" width="900" height="601" draggable="false"></p>
-                        <p>
-                            テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
-                        </p>
-                        <h3>見出しが入ります見出しが入ります</h3>
-                        <p>
-                            テキストが入ります<a
-                                href="#">テキストが入ります</a>テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
-                        </p>
-                        <p>
-                            <a href="#" class="btn">ボタンリンク</a>
+        <!-- daily// -->
+        <section class="daily" data-offset-top>
+            <div class="daily_container u-wrapper">
+                <div class="daily_intro c-introduce">
+                    <h2 data-fadein>
+                        コピーが入ります <br />
+                        コピーが入ります
+                    </h2>
+                    <div class="c-introduce_content">
+                        <p data-fadein>
+                            テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります（200字程度）
                         </p>
                     </div>
-
-                    <div class="news_controls" data-fadein>
-                        <div class="news_pager newer">
-                            <a href="#">＜　新しい記事</a>
+                </div>
+                <div data-fadein>
+                    <div class="daily_swiper" data-basic-swiper>
+                        <div class="daily_swiper_wrapper swiper-wrapper">
+                            <div class="daily_swiper_slide swiper-slide">
+                                <figure>
+                                    <img class="lazy" data-src="/assets/images/daily" alt="靴を揃える" draggable="false"
+                                        width="340" height="227">
+                                </figure>
+                                <h3>靴を揃える</h3>
+                                <p>
+                                    テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+                                </p>
+                            </div>
+                            <div class="daily_swiper_slide swiper-slide">
+                                <figure>
+                                    <img class="lazy" data-src="/assets/images/daily" alt="挨拶をする" draggable="false"
+                                        width="340" height="227">
+                                </figure>
+                                <h3>挨拶をする</h3>
+                                <p>
+                                    テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+                                </p>
+                            </div>
+                            <div class="daily_swiper_slide swiper-slide">
+                                <figure>
+                                    <img class="lazy" data-src="/assets/images/daily" alt="整理整頓" draggable="false"
+                                        width="340" height="227">
+                                </figure>
+                                <h3>整理整頓</h3>
+                                <p>
+                                    テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+                                </p>
+                            </div>
                         </div>
-                        <div class="news_center">
-                            <a href="/news/" class="--back">一覧に戻る</a>
-                        </div>
-                        <div class="news_pager older">
-                            <a href="#">古い記事　＞</a>
+                    </div>
+                </div>
+                <div class="daily_tabs" data-fadein>
+                    <div class="daily_tabs_list">
+                        <ul data-tabs>
+                            <li class="--active" data-tabs-items>
+                                <div class="c-textcircle">
+                                    <p>園の一日</p>
+                                </div>
+                            </li>
+                            <li data-tabs-items>
+                                <div class="c-textcircle">
+                                    <p>年間行事</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="daily_tabs_group">
+                        <div class="daily_tabs_content daily_timeline --active" data-tabs-content>1</div>
+                        <div class="daily_tabs_content daily_event" data-tabs-content>
+                            <div class="daily_event_list">
+                                <!-- 4月/5月 -->
+                                <div class="daily_event_items">
+                                    <div class="daily_event_inner">
+                                        <div class="daily_event_content">
+                                            <div class="daily_event_month">
+                                                <span></span>
+                                                <p>4月</p>
+                                            </div>
+                                            <figure>
+                                                <img class="lazy" data-src="/assets/images/daily/" alt="入園式・進級式"
+                                                    draggable="false" width="255" height="171">
+                                            </figure>
+                                            <h4>入園式・進級式</h4>
+                                        </div>
+                                        <div class="daily_event_content">
+                                            <div class="daily_event_month">
+                                                <span></span>
+                                                <p>5月</p>
+                                            </div>
+                                            <figure>
+                                                <img class="lazy" data-src="/assets/images/daily/" alt="子どもの日集会"
+                                                    draggable="false" width="255" height="171">
+                                            </figure>
+                                            <h4>子どもの日集会</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 6月 -->
+                                <div class="daily_event_items">
+                                    <div class="daily_event_month">
+                                        <span></span>
+                                        <p>6月</p>
+                                    </div>
+                                    <div class="daily_event_inner">
+                                        <div class="daily_event_content">
+                                            <figure>
+                                                <img class="lazy" data-src="/assets/images/daily/" alt="入園式・進級式"
+                                                    draggable="false" width="255" height="171">
+                                            </figure>
+                                            <h4>入園式・進級式</h4>
+                                        </div>
+                                        <div class="daily_event_content">
+                                            <figure>
+                                                <img class="lazy" data-src="/assets/images/daily/" alt="子どもの日集会"
+                                                    draggable="false" width="255" height="171">
+                                            </figure>
+                                            <h4>子どもの日集会</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 7月 -->
+                                <div class="daily_event_items">
+                                    <div class="daily_event_month">
+                                        <span></span>
+                                        <p>7月</p>
+                                    </div>
+                                    <div class="daily_event_inner">
+                                        <div class="daily_event_content">
+                                            <figure>
+                                                <img class="lazy" data-src="/assets/images/daily/" alt="七夕集会"
+                                                    draggable="false" width="255" height="171">
+                                            </figure>
+                                            <h4>七夕集会</h4>
+                                        </div>
+                                        <div class="daily_event_content">
+                                            <figure>
+                                                <img class="lazy" data-src="/assets/images/daily/" alt="熊野カップ"
+                                                    draggable="false" width="255" height="171">
+                                            </figure>
+                                            <h4>熊野カップ</h4>
+                                        </div>
+                                        <div class="daily_event_content">
+                                            <figure>
+                                                <img class="lazy" data-src="/assets/images/daily/" alt="1学期終業式"
+                                                    draggable="false" width="255" height="171">
+                                            </figure>
+                                            <h4>1学期終業式</h4>
+                                        </div>
+                                        <div class="daily_event_content">
+                                            <figure>
+                                                <img class="lazy" data-src="/assets/images/daily/" alt="お泊り保育（年長）"
+                                                    draggable="false" width="255" height="171">
+                                            </figure>
+                                            <h4>お泊り保育（年長）</h4>
+                                        </div>
+                                        <div class="daily_event_content">
+                                            <figure>
+                                                <img class="lazy" data-src="/assets/images/daily/" alt="夏期保育（前期）"
+                                                    draggable="false" width="255" height="171">
+                                            </figure>
+                                            <h4>夏期保育（前期）</h4>
+                                        </div>
+                                        <div class="daily_event_content">
+                                            <figure>
+                                                <img class="lazy" data-src="/assets/images/daily/" alt="夕涼み会"
+                                                    draggable="false" width="255" height="171">
+                                            </figure>
+                                            <h4>夕涼み会</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 8月 -->
+                                <div class="daily_event_items">
+                                    <div class="daily_event_month">
+                                        <span></span>
+                                        <p>8月</p>
+                                    </div>
+                                    <div class="daily_event_inner">
+                                        <div class="daily_event_content">
+                                            <figure>
+                                                <img class="lazy" data-src="/assets/images/daily/" alt="夏期保育（後期）"
+                                                    draggable="false" width="255" height="171">
+                                            </figure>
+                                            <h4>夏期保育（後期）</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 9月 -->
+                                <div class="daily_event_items">
+                                    <div class="daily_event_month">
+                                        <span></span>
+                                        <p>9月</p>
+                                    </div>
+                                    <div class="daily_event_inner">
+                                        <div class="daily_event_content">
+                                            <figure>
+                                                <img class="lazy" data-src="/assets/images/daily/" alt="2学期始業式"
+                                                    draggable="false" width="255" height="171">
+                                            </figure>
+                                            <h4>2学期始業式</h4>
+                                        </div>
+                                        <div class="daily_event_content">
+                                            <figure>
+                                                <img class="lazy" data-src="/assets/images/daily/" alt="神輿担ぎ"
+                                                    draggable="false" width="255" height="171">
+                                            </figure>
+                                            <h4>神輿担ぎ</h4>
+                                        </div>
+                                        <div class="daily_event_content">
+                                            <figure>
+                                                <img class="lazy" data-src="/assets/images/daily/" alt="城山祭り（観劇会）"
+                                                    draggable="false" width="255" height="171">
+                                            </figure>
+                                            <h4>城山祭り（観劇会）</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 10月 -->
+                                <div class="daily_event_items">
+                                    <div class="daily_event_month">
+                                        <span></span>
+                                        <p>10月</p>
+                                    </div>
+                                    <div class="daily_event_inner">
+                                        <div class="daily_event_content">
+                                            <figure>
+                                                <img class="lazy" data-src="/assets/images/daily/" alt="合同運動会（城山カップ）"
+                                                    draggable="false" width="255" height="171">
+                                            </figure>
+                                            <h4>合同運動会（城山カップ）</h4>
+                                        </div>
+                                        <div class="daily_event_content">
+                                            <figure>
+                                                <img class="lazy" data-src="/assets/images/daily/" alt="秋の遠足"
+                                                    draggable="false" width="255" height="171">
+                                            </figure>
+                                            <h4>秋の遠足</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 11月 -->
+                                <div class="daily_event_items">
+                                    <div class="daily_event_month">
+                                        <span></span>
+                                        <p>11月</p>
+                                    </div>
+                                    <div class="daily_event_inner">
+                                        <div class="daily_event_content">
+                                            <figure>
+                                                <img class="lazy" data-src="/assets/images/daily/" alt="参観日"
+                                                    draggable="false" width="255" height="171">
+                                            </figure>
+                                            <h4>参観日</h4>
+                                        </div>
+                                        <div class="daily_event_content">
+                                            <figure>
+                                                <img class="lazy" data-src="/assets/images/daily/" alt="大根掘り"
+                                                    draggable="false" width="255" height="171">
+                                            </figure>
+                                            <h4>大根掘り</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 12月 -->
+                                <div class="daily_event_items">
+                                    <div class="daily_event_month">
+                                        <span></span>
+                                        <p>12月</p>
+                                    </div>
+                                    <div class="daily_event_inner">
+                                        <div class="daily_event_content">
+                                            <figure>
+                                                <img class="lazy" data-src="/assets/images/daily/" alt="おもちつき"
+                                                    draggable="false" width="255" height="171">
+                                            </figure>
+                                            <h4>おもちつき</h4>
+                                        </div>
+                                        <div class="daily_event_content">
+                                            <figure>
+                                                <img class="lazy" data-src="/assets/images/daily/" alt="2学期終業式"
+                                                    draggable="false" width="255" height="171">
+                                            </figure>
+                                            <h4>2学期終業式</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 1月 -->
+                                <div class="daily_event_items">
+                                    <div class="daily_event_month">
+                                        <span></span>
+                                        <p>1月</p>
+                                    </div>
+                                    <div class="daily_event_inner">
+                                        <div class="daily_event_content">
+                                            <figure>
+                                                <img class="lazy" data-src="/assets/images/daily/" alt="3学期始業式"
+                                                    draggable="false" width="255" height="171">
+                                            </figure>
+                                            <h4>3学期始業式</h4>
+                                        </div>
+                                        <div class="daily_event_content">
+                                            <figure>
+                                                <img class="lazy" data-src="/assets/images/daily/" alt="熊野カップ"
+                                                    draggable="false" width="255" height="171">
+                                            </figure>
+                                            <h4>熊野カップ</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 2月 -->
+                                <div class="daily_event_items">
+                                    <div class="daily_event_month">
+                                        <span></span>
+                                        <p>2月</p>
+                                    </div>
+                                    <div class="daily_event_inner">
+                                        <div class="daily_event_content">
+                                            <figure>
+                                                <img class="lazy" data-src="/assets/images/daily/" alt="豆まき集会"
+                                                    draggable="false" width="255" height="171">
+                                            </figure>
+                                            <h4>豆まき集会</h4>
+                                        </div>
+                                        <div class="daily_event_content">
+                                            <figure>
+                                                <img class="lazy" data-src="/assets/images/daily/" alt="学習発表会"
+                                                    draggable="false" width="255" height="171">
+                                            </figure>
+                                            <h4>学習発表会</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 3月 -->
+                                <div class="daily_event_items">
+                                    <div class="daily_event_month">
+                                        <span></span>
+                                        <p>3月</p>
+                                    </div>
+                                    <div class="daily_event_inner">
+                                        <div class="daily_event_content">
+                                            <figure>
+                                                <img class="lazy" data-src="/assets/images/daily/" alt="卒園遠足（年長）"
+                                                    draggable="false" width="255" height="171">
+                                            </figure>
+                                            <h4>卒園遠足（年長）</h4>
+                                        </div>
+                                        <div class="daily_event_content">
+                                            <figure>
+                                                <img class="lazy" data-src="/assets/images/daily/" alt="3学期修了式"
+                                                    draggable="false" width="255" height="171">
+                                            </figure>
+                                            <h4>3学期修了式</h4>
+                                        </div>
+                                        <div class="daily_event_content">
+                                            <figure>
+                                                <img class="lazy" data-src="/assets/images/daily/" alt="卒園式"
+                                                    draggable="false" width="255" height="171">
+                                            </figure>
+                                            <h4>卒園式</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- //details -->
+        <!-- //daily -->
 
         <!-- bnr// -->
         <section class="c-bnr">

@@ -11,6 +11,8 @@ const init = () => {
   });
 };
 
+const mobileMediaQuery = window.matchMedia('(max-width: 1023px)');
+
 // ===== app height =====
 const appHeight = () => {
   const doc = document.documentElement;
@@ -164,21 +166,6 @@ const fadeIn = () => {
   window.addEventListener(evt, fadeIn);
 });
 
-// ====== news page ======
-if (document.querySelector("[data-news-category]")) {
-  const categoryBtn = document.querySelector("[data-news-btn]");
-  const categoryPanel = document.querySelector("[data-news-group]");
-  categoryBtn.addEventListener("click", function () {
-    console.log("hello");
-    this.classList.toggle("--active");
-    if (categoryPanel.style.maxHeight) {
-      categoryPanel.style.maxHeight = null;
-    } else {
-      categoryPanel.style.maxHeight = categoryPanel.scrollHeight + "px";
-    }
-  });
-}
-
 // ===== accordion ======
 if (document.querySelector("[data-accordion-btn]")) {
   const accordion = document.querySelectorAll("[data-accordion-btn]");
@@ -195,6 +182,121 @@ if (document.querySelector("[data-accordion-btn]")) {
     });
   }
 }
+
+// ===== handle tabs change =====
+const initTabs = () => {
+  const tabs = document.querySelectorAll('[data-tabs-items]');
+  const contents = document.querySelectorAll('[data-tabs-content]');
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => {
+      // remove all class items/content
+      tabs.forEach(t => t.classList.remove('--active'));
+      contents.forEach(c => c.classList.remove('--active'));
+
+      // add class item/click show/content
+      tab.classList.add('--active');
+      contents[index].classList.add('--active');
+    });
+  });
+}
+initTabs();
+
+// ===== swiper components =====
+const swiperComponents = new Swiper("[data-swiper-components]", {
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  speed: 600,
+  breakpoints: {
+    0: {
+      slidesPerView: 1.167,
+      spaceBetween: 15,
+      draggable: true,
+    },
+    1024: {
+      slidesPerView: 1.45,
+      spaceBetween: 30,
+      draggable: false,
+    },
+  },
+});
+
+// ## init custom cursor
+const initCustomCursor = () => {
+  const cursorPrev = document.querySelector('.cursor-prev');
+  const cursorNext = document.querySelector('.cursor-next');
+  const swiper = document.querySelector('[data-swiper-components]');
+
+  if (!cursorPrev || !cursorNext || !swiper) return;
+
+  document.addEventListener('mousemove', (e) => {
+    cursorPrev.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    cursorNext.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+
+    const target = e.target;
+    if (target.closest('.swiper-button-next')) {
+      cursorNext.classList.add('--active');
+      cursorPrev.classList.remove('--active');
+    } else if (target.closest('.swiper-button-prev')) {
+      cursorPrev.classList.add('--active');
+      cursorNext.classList.remove('--active');
+    } else {
+      cursorPrev.classList.remove('--active');
+      cursorNext.classList.remove('--active');
+    }
+  });
+
+  // Ẩn cursor khi chuột rời swiper
+  swiper.addEventListener('mouseleave', () => {
+    cursorPrev.classList.remove('--active');
+    cursorNext.classList.remove('--active');
+  });
+}
+initCustomCursor();
+
+// ====== news page ======
+if (document.querySelector("[data-news-category]")) {
+  const categoryBtn = document.querySelector("[data-news-btn]");
+  const categoryPanel = document.querySelector("[data-news-group]");
+  categoryBtn.addEventListener("click", function () {
+    console.log("hello");
+    this.classList.toggle("--active");
+    if (categoryPanel.style.maxHeight) {
+      categoryPanel.style.maxHeight = null;
+    } else {
+      categoryPanel.style.maxHeight = categoryPanel.scrollHeight + "px";
+    }
+  });
+}
+
+// ====== education/daily swiper ======
+let swiperBasic = null;
+const initSwiperBasic = () => {
+  if (mobileMediaQuery.matches && !swiperBasic) {
+    swiperBasic = new Swiper("[data-basic-swiper]", {
+      breakpoints: {
+        0: {
+          slidesPerView: 1.164,
+          spaceBetween: 20,
+          allowTouchMove: true,
+          draggable: true,
+        },
+        1024: {
+          slidesPerView: 1,
+          draggable: false,
+          allowTouchMove: false,
+        },
+      },
+    });
+  } else if (!mobileMediaQuery.matches && swiperBasic) {
+    swiperBasic.destroy(true, true);
+    swiperBasic = null;
+  }
+};
+initSwiperBasic();
+mobileMediaQuery.addEventListener('change', initSwiperBasic);
 
 // ### ===== DOMCONTENTLOADED ===== ###
 window.addEventListener("pageshow", () => {
