@@ -11,8 +11,6 @@ const init = () => {
   });
 };
 
-const mobileMediaQuery = window.matchMedia('(max-width: 1023px)');
-
 // ===== app height =====
 const appHeight = () => {
   const doc = document.documentElement;
@@ -272,6 +270,7 @@ if (document.querySelector("[data-news-category]")) {
 }
 
 // ====== education/daily swiper ======
+const mobileMediaQuery = window.matchMedia('(max-width: 1023px)');
 let swiperBasic = null;
 const initSwiperBasic = () => {
   if (mobileMediaQuery.matches && !swiperBasic) {

@@ -345,6 +345,15 @@
     color: $white-cl;
     opacity: 1;
 
+    svg.window {
+      g {
+        stroke: $white-cl;
+      }
+      rect {
+        fill: $yellow-cl;
+      }
+    }
+
     svg.arrow {
       line {
         stroke: $white-cl;
@@ -377,6 +386,10 @@
       right: 25px !important;
       width: 20px;
       height: auto;
+    }
+
+    svg.window {
+      width: 14px;
     }
 
     svg.phone {
